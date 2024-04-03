@@ -1,7 +1,7 @@
 class ArchivesController < ApplicationController
   def index
     @archives = Archive.all
-    render json: @archives, status: :ok
+    render json: ArchiveSerializer.new(@archives), status: :ok
   end
 
   def last
