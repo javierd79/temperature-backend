@@ -59,7 +59,7 @@ class LogsController < ApplicationController
   end
 
   def log_params
-    params.require(:log).permit(:temperature, :humidity, :archive_id, :token)
+    params.permit(:temperature, :humidity, :archive_id, :token)
   end
 
   def verify_token
