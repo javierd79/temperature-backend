@@ -22,7 +22,7 @@ class Archive < ApplicationRecord
     @device = Device.find_by(token: device_token)
 
     if @device.nil? 
-      raise { message: "Device not found" } 
+      raise "Device not found"
     else
       minute_parse = minute.to_i < 30 ? "00" : "30"
 
