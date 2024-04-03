@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :logs do
     get 'last', on: :collection
   end
+
+  mount ActionCable.server => '/cable'  
 end

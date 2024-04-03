@@ -3,6 +3,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'action_cable/engine'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -14,6 +15,8 @@ module BackendTemperature
     config.load_defaults 7.0
 
     $redis = Redis.new
+
+    origins = ['http://localhost:5000']
 
     # Configuration for the application, engines, and railties goes here.
     #
