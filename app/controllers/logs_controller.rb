@@ -59,11 +59,11 @@ class LogsController < ApplicationController
   end
 
   def log_params
-    params.permit(:temperature, :humidity, :archive_id, :token)
+    params.require(:log).permit(:temperature, :humidity, :archive_id, :token)
   end
 
   def verify_token
-    @device = Device.find_by(token: log_params[:token])
+    @device = Device.find_by(token: params[:token] || log_params[:token])
 
     render json: { message: "Device doesn't exist" }, status: :unauthorized unless @device
   end
