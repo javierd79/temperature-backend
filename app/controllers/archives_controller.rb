@@ -1,6 +1,6 @@
 class ArchivesController < ApplicationController
   def index
-    @archives = Archive.all
+    @archives = Archive.includes(:logs).all
     render json: @archives, status: :ok
   end
 
