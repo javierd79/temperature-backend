@@ -4,7 +4,7 @@ class LogsController < ApplicationController
 
   # GET /logs
   def index
-    @logs = Log.all
+    @logs = Log.all.includes(:archive)
 
     render json: @logs, status: :ok
   end
