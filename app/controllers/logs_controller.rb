@@ -1,5 +1,5 @@
 class LogsController < ApplicationController
-  before_action :set_log, only: %i[show]
+  before_action :set_log, except: [:index, :last]
   before_action :verify_token
 
   # GET /logs
