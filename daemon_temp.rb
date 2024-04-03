@@ -1,6 +1,5 @@
 require_relative "config/environment"
 require 'httparty'
-require 'uri'
 
 $redis.config('SET', 'notify-keyspace-events', 'KEA')
 
