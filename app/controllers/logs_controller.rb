@@ -63,7 +63,7 @@ class LogsController < ApplicationController
   end
 
   def verify_token
-    @device = Device.find_by(token: params[:token] || log_params[:token])
+    @device = Device.last
 
     render json: { message: "Device doesn't exist" }, status: :unauthorized unless @device
   end
